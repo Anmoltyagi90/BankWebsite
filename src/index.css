@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  color: rgb(241 245 249 / 1);
+  background-color: rgb(2 6 23 / 1);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #010313;
+  background-image: radial-gradient(circle at 20% 20%, rgba(66, 148, 255, 0.25), transparent 45%),
+    radial-gradient(circle at 80% 0%, rgba(16, 58, 177, 0.35), transparent 55%),
+    linear-gradient(120deg, rgba(15, 23, 42, 0.95), rgba(2, 6, 23, 0.95));
+}
+
+#root {
+  isolation: isolate;
+}
+
+.glass {
+  background: rgba(7, 12, 26, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  box-shadow: 0 8px 32px rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(12px);
+}
+
+.gradient-border {
+  position: relative;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(120deg, rgba(67, 56, 202, 0.35), rgba(14, 75, 219, 0.55), rgba(236, 72, 153, 0.4));
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.grid-overlay {
+  background-image: radial-gradient(circle, rgba(226, 232, 240, 0.12) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
